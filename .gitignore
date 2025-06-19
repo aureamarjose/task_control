@@ -1,0 +1,37 @@
+# Ignora a pasta vendor do projeto Rails
+rails_app/vendor/
+
+# Ignora configurações do Bundler
+rails_app/.bundle
+
+# Ignora arquivos de ambiente (exceto templates)
+rails_app/.env*
+!rails_app/.env*.erb
+
+# Ignora logs e arquivos temporários
+rails_app/log/*
+rails_app/tmp/*
+!rails_app/log/.keep
+!rails_app/tmp/.keep
+
+# Ignora arquivos de PID, mas mantém o diretório
+rails_app/tmp/pids/*
+!rails_app/tmp/pids/
+!rails_app/tmp/pids/.keep
+
+# Ignora arquivos de storage e bancos SQLite
+rails_app/storage/*
+!rails_app/storage/.keep
+rails_app/tmp/storage/*
+!rails_app/tmp/storage/
+!rails_app/tmp/storage/.keep
+
+# Ignora assets públicos gerados
+rails_app/public/assets
+
+# Ignora chave mestra de credenciais
+rails_app/config/master.key
+
+# Ignora builds de assets do app
+rails_app/app/assets/builds/*
+!rails_app/app/assets/builds/.keep
