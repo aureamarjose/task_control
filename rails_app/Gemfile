@@ -53,6 +53,8 @@ group :development, :test do
 
   gem "rubocop-rails", require: false
   gem "rubocop-shopify", require: false
+
+  gem "rails_live_reload"
 end
 
 group :development do
