@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_06_27_040419) do
+ActiveRecord::Schema[8.0].define(version: 2025_06_29_170207) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -35,12 +35,12 @@ ActiveRecord::Schema[8.0].define(version: 2025_06_27_040419) do
     t.date "end_date"
     t.date "due_date"
     t.integer "task_status", default: 0
-    t.bigint "collaborators_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["collaborators_id"], name: "index_tasks_on_collaborators_id"
+    t.bigint "collaborator_id", null: false
+    t.index ["collaborator_id"], name: "index_tasks_on_collaborator_id"
   end
 
   add_foreign_key "collaborators", "sectors"
-  add_foreign_key "tasks", "collaborators", column: "collaborators_id"
+  add_foreign_key "tasks", "collaborators"
 end
