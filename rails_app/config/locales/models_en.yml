@@ -1,0 +1,12 @@
+en:
+  activerecord:
+    attributes:
+      task:
+        description: "Description"
+        start_date: "Start Date"
+        end_date: "End Date"
+        due_date: "Due Date"
+        task_status: "Task Status"
+        collaborator_id: "Collaborator"
+        input:
+          placeholder: "Select a collaborator..."
