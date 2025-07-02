@@ -10,3 +10,7 @@ en:
         collaborator_id: "Collaborator"
         input:
           placeholder: "Select a collaborator..."
+      sector:
+        input:
+          placeholder: "Select a sector..."
+      
