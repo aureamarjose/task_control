@@ -3,14 +3,21 @@ en:
     attributes:
       task:
         description: "Description"
-        start_date: "Start Date"
-        end_date: "End Date"
+        start_date: "Creation Date"
+        end_date: "Completion Date"
         due_date: "Due Date"
         task_status: "Task Status"
         collaborator_id: "Collaborator"
+        enums:          
+          task_status:
+            not_started: "🔴 Not Started"
+            in_progress: "🟡 In Progress"
+            completed: "🟢 Completed"
+            canceled: "⚫ Canceled"
         input:
           placeholder: "Select a collaborator..."
       sector:
         input:
           placeholder: "Select a sector..."
-      
+
+  

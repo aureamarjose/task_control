@@ -19,16 +19,16 @@
   <div class="my-5">
     <%= form.label :start_date %>
     <%= form.date_field :start_date, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": task.errors[:start_date].none?, "border-red-400 focus:outline-red-600": task.errors[:start_date].any?}] %>
+  </div>  
+
+  <div class="my-5">
+    <%= form.label :due_date %>
+    <%= form.date_field :due_date, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": task.errors[:due_date].none?, "border-red-400 focus:outline-red-600": task.errors[:due_date].any?}] %>
   </div>
 
   <div class="my-5">
     <%= form.label :end_date %>
     <%= form.date_field :end_date, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": task.errors[:end_date].none?, "border-red-400 focus:outline-red-600": task.errors[:end_date].any?}] %>
-  </div>
-
-  <div class="my-5">
-    <%= form.label :due_date %>
-    <%= form.date_field :due_date, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": task.errors[:due_date].none?, "border-red-400 focus:outline-red-600": task.errors[:due_date].any?}] %>
   </div>
 
   <div class="my-5">
@@ -38,7 +38,7 @@
 
   <div class="my-5">
     <%= form.label :task_status %>
-    <%= form.select :task_status, Task.task_statuses.keys, {include_blank: true}, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": task.errors[:task_status].none?, "border-red-400 focus:outline-red-600": task.errors[:task_status].any?}] %>
+    <%= form.select :task_status, Task.task_statuses.keys.map { |status| [t("activerecord.attributes.task.enums.task_status.#{status}"), status] }, {}, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": task.errors[:task_status].none?, "border-red-400 focus:outline-red-600": task.errors[:task_status].any?}] %>
   </div>
 
   <div class="inline">
