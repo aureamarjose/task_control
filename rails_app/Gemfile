@@ -66,3 +66,5 @@ end
 gem "pagy", "~> 0.6.0"
 
 gem "tty-spinner"
+
+gem "phlex-rails", "~> 2.3"
