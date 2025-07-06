@@ -6,6 +6,7 @@ class CollaboratorsController < ApplicationController
   # GET /collaborators or /collaborators.json
   def index
     @collaborators = Collaborator.includes(:sector).all
+    @sectors_hash = Sector.unscoped.where(id: @collaborators.map(&:sector_id)).index_by(&:id)
     @pagy, @collaborators = pagy(@collaborators, items: 5)
   end
 

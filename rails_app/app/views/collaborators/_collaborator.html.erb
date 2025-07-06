@@ -1,3 +1,4 @@
+<% decorated_collaborator = CollaboratorDecorator.new(collaborator) %>
 <div id="<%= dom_id collaborator %>" class="w-full sm:w-auto my-5 space-y-5">
   <div>
     <strong class="block font-medium mb-1">Name:</strong>
@@ -9,6 +10,6 @@
   </div>
   <div>
     <strong class="block font-medium mb-1">Sector:</strong>
-    <%= collaborator.sector_name %>
+    <%= decorated_collaborator.sector_name %>
   </div>
 </div>
