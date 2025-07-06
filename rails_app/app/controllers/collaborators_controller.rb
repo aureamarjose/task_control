@@ -5,7 +5,7 @@ class CollaboratorsController < ApplicationController
 
   # GET /collaborators or /collaborators.json
   def index
-    @collaborators = Collaborator.all
+    @collaborators = Collaborator.includes(:sector).all
     @pagy, @collaborators = pagy(@collaborators, items: 5)
   end
 

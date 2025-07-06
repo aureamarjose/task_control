@@ -5,8 +5,10 @@ class TasksController < ApplicationController
 
   # GET /tasks or /tasks.json
   def index
-    @task = Task.all.includes(:collaborator)
-    @pagy, @tasks = pagy(@task, items: 5)
+    @tasks = Task.includes(collaborator: :sector).all
+    @collaborators_hash = Collaborator.unscoped.where(id: @tasks.map(&:collaborator_id)).index_by(&:id)
+    @sectors_hash = Sector.unscoped.where(id: @collaborators_hash.values.map(&:sector_id)).index_by(&:id)
+    @pagy, @tasks = pagy(@tasks, items: 5)
   end
 
   # GET /tasks/1 or /tasks/1.json

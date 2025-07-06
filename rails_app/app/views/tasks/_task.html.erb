@@ -1,4 +1,5 @@
-<div id="<%= dom_id task %>" class="w-full sm:w-auto my-5 space-y-5">
+<% decorated_task = TaskDecorator.new(task, defined?(@collaborators_hash) ? @collaborators_hash : {}, defined?(@sectors_hash) ? @sectors_hash : {}) %>
+<div id="<%= dom_id task %>" class="w-full sm:w-auto my-5 space-y-5">  
   <div>
     <strong class="block font-medium mb-1">Description:</strong>
     <%= task.description %>
@@ -17,7 +18,7 @@
   </div>  
   <div>
     <strong class="block font-medium mb-1">Collaborators:</strong>
-    <%= task.collaborator_name %> - Sector: <%= task.sector_name %>
+    <%= decorated_task.collaborator_name %> - Sector: <%= decorated_task.sector_name %>
   </div>  
   <div>
     <strong class="block font-medium mb-1">Task status:</strong>
