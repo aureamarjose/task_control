@@ -26,4 +26,7 @@
       <p class="text-center my-10">No collaborators found.</p>
     <% end %>
   </div>
+  <div class="mt-5">
+    <%== pagy_nav(@pagy) if @pagy.pages > 1 %>
+  </div>
 </div>

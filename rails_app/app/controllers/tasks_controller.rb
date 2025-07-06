@@ -6,7 +6,7 @@ class TasksController < ApplicationController
   # GET /tasks or /tasks.json
   def index
     @task = Task.all.includes(:collaborator)
-    @pagy, @tasks = pagy(@task, items: 2)
+    @pagy, @tasks = pagy(@task, items: 5)
   end
 
   # GET /tasks/1 or /tasks/1.json

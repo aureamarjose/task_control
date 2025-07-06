@@ -63,3 +63,7 @@ group :development do
 end
 
 gem "pagy", "~> 0.6.0"
+
+gem "tty-spinner"
+
+gem "faker"
