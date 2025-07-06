@@ -4,25 +4,28 @@ Nome do Projeto
 Este é um projeto desenvolvido como parte do curso de Ruby on Rails. O objetivo é aplicar os conceitos aprendidos em aula para criar uma aplicação web funcional, bem estruturada e com boas práticas de desenvolvimento.
 
 📦 Tecnologias Utilizadas
-Ruby 3.2.x
-Ruby on Rails 7.x
+Ruby 3.4.4
+Ruby on Rails 8.0.2
 PostgreSQL
-Sidekiq (opcional)
-Redis (opcional)
 🚀 Como rodar o projeto localmente
 # Clone o repositório
-git clone https://github.com/seu-usuario/nome-do-projeto.git
-cd nome-do-projeto
+git clone https://github.com/aureamarjose/task_control.git
+cd task_control
 
 # abra o VSCode
 # Inicie o projeto dentro do dev container
+# Digite o comando
+bundle install
+# Criar e polular o banco de dados
+rails setup:populate
+
 ✅ Funcionalidades implementadas
 Descreva aqui as principais funcionalidades da sua aplicação. Por exemplo:
 
-Cadastro e login de usuários com autenticação
-CRUD de posts/artigos
+Controle de tarefas
+CRUD sector/collaborator/task
 Background job para envio de e-mails
-Sistema de permissões com roles diferentes
+
 🧠 Conceitos aplicados
 Abaixo estão os conceitos aprendidos em aula e aplicados neste projeto, junto com a justificativa de sua utilização:
 
