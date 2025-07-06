@@ -14,15 +14,11 @@
   <div>
     <strong class="block font-medium mb-1">Due date:</strong>
     <%= task.due_date %>
-  </div>
-  <div> 
-    <strong class="block font-medium mb-1">Sector:</strong>
-    <%= task.sector_name %>
-  </div>
+  </div>  
   <div>
     <strong class="block font-medium mb-1">Collaborators:</strong>
-    <%= task.collaborator_name %>
-  </div>
+    <%= task.collaborator_name %> - Sector: <%= task.sector_name %>
+  </div>  
   <div>
     <strong class="block font-medium mb-1">Task status:</strong>
     <%= t("activerecord.attributes.task.enums.task_status.#{task.task_status}") %>
