@@ -8,4 +8,8 @@ class Task < ApplicationRecord
   validates :start_date, presence: true
   validates :collaborator_id, presence: true
   validates :task_status, presence: true
+
+  def collaborator_name
+    collaborator&.name || Collaborator.unscoped.find_by(id: collaborator_id)&.name || "Collaborator not found"
+  end
 end
