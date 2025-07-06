@@ -2,7 +2,11 @@
 
 Rails.application.routes.draw do
   resources :tasks
-  resources :collaborators
+  resources :collaborators do
+    collection do
+      get :search
+    end
+  end
   resources :sectors
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

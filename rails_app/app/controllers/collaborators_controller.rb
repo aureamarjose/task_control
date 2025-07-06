@@ -10,6 +10,12 @@ class CollaboratorsController < ApplicationController
     @pagy, @collaborators = pagy(@collaborators, items: 5)
   end
 
+  def search
+    query = params[:query_name]
+    @collaborators = Collaborator.search(query).limit(5)
+    render(json: @collaborators)
+  end
+
   # GET /collaborators/1 or /collaborators/1.json
   def show
   end
