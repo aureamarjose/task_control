@@ -12,4 +12,15 @@ class Task < ApplicationRecord
   def collaborator_name
     collaborator&.name || Collaborator.unscoped.find_by(id: collaborator_id)&.name || "Collaborator not found"
   end
+
+  def sector_name
+    # Tenta pelo relacionamento normal
+    collaborator&.sector&.name ||
+      # Busca ignorando o default_scope do Collaborator e do Sector
+      begin
+        collab = Collaborator.unscoped.find_by(id: collaborator_id)
+        collab&.sector_id ? Sector.unscoped.find_by(id: collab.sector_id)&.name : nil
+      end ||
+      "Sector not found"
+  end
 end
