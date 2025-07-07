@@ -8,14 +8,20 @@ class TasksController < ApplicationController
     @tasks = Task.includes(collaborator: :sector).all
     @collaborators_hash = Collaborator.unscoped.where(id: @tasks.map(&:collaborator_id)).index_by(&:id)
     @sectors_hash = Sector.unscoped.where(id: @collaborators_hash.values.map(&:sector_id)).index_by(&:id)
-    @pagy, @tasks = pagy(@tasks, items: 5)
+    @pagy, @tasks = pagy(@tasks, items: @tasks.count == 5 ? 6 : 5)
   end
 
   def search
     name_query = params[:search_name]
     status_query = params[:search_status]
     @tasks = Task.search(name_query, status_query)
-    @pagy, @tasks = pagy(@tasks, items: 5)
+
+    @collaborators_hash = Collaborator.unscoped.where(id: @tasks.map(&:collaborator_id)).index_by(&:id)
+    @sectors_hash = Sector.unscoped.where(id: @collaborators_hash.values.map(&:sector_id)).index_by(&:id)
+
+    @pagy, @tasks = pagy(@tasks, items: @tasks.count == 5 ? 6 : 5)
+    # puts "------------------tasks after pagy: #{@tasks.count}"
+    # puts "------------------pagy: #{@pagy.inspect}"
     render(:index)
   end
 

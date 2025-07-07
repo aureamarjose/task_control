@@ -10,14 +10,14 @@ export default class extends Controller {
   }
 
   connect() {
-    console.log('search', this.urlValue, this.nameValue)
-    useDebounce(this, { wait: 1000 })
+    //console.log('search', this.urlValue, this.nameValue)
+    useDebounce(this, { wait: 500 })
   }
 
   search() {
     const searchValue = this.inputSearchTarget.value;
     const url = `${this.urlValue}=${encodeURIComponent(searchValue)}`
-    console.log("url", url)
+    //console.log("url", url)
 
     // Se searchValue for vazio, retorne imediatamente
     if (!searchValue.trim()) {
@@ -30,7 +30,7 @@ export default class extends Controller {
     })
       .then(response => response.json())
       .then(data => {
-        console.log(data)
+        //console.log(data)
         if (data.length == 0) {
           this.resultsTarget.innerHTML = '<p class="block w-full text-center text-blue-500 dark:text-gray-400">Nenhuma collaborador encontrado.</p>';
           return;
