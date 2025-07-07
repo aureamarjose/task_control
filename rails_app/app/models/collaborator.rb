@@ -5,10 +5,4 @@ class Collaborator < ApplicationRecord
   has_many :tasks, dependent: :destroy
 
   default_scope { where(enabled: true) }
-
-  class << self
-    def search(query)
-      unscoped.where("LOWER(name) LIKE ?", "%#{query.downcase}%")
-    end
-  end
 end

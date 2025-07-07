@@ -12,7 +12,7 @@ class CollaboratorsController < ApplicationController
 
   def search
     query = params[:query_name]
-    @collaborators = Collaborator.search(query).limit(5)
+    @collaborators = FilterCollaborator.call(query).limit(5)
     render(json: @collaborators)
   end
 

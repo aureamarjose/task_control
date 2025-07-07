@@ -14,7 +14,7 @@ class TasksController < ApplicationController
   def search
     name_query = params[:search_name]
     status_query = params[:search_status]
-    @tasks = Task.search(name_query, status_query)
+    @tasks = FilterTask.call(name_query, status_query)
 
     @collaborators_hash = Collaborator.unscoped.where(id: @tasks.map(&:collaborator_id)).index_by(&:id)
     @sectors_hash = Sector.unscoped.where(id: @collaborators_hash.values.map(&:sector_id)).index_by(&:id)
