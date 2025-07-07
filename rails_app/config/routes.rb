@@ -1,7 +1,11 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  resources :tasks
+  resources :tasks do
+    collection do
+      get :search
+    end
+  end
   resources :collaborators do
     collection do
       get :search

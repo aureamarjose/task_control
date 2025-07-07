@@ -11,6 +11,13 @@ class TasksController < ApplicationController
     @pagy, @tasks = pagy(@tasks, items: 5)
   end
 
+  def search
+    query = params[:search_name]
+    @tasks = Task.search(query)
+    @pagy, @tasks = pagy(@tasks, items: 5)
+    render(:index)
+  end
+
   # GET /tasks/1 or /tasks/1.json
   def show
   end

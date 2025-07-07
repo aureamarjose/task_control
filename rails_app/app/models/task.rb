@@ -8,4 +8,13 @@ class Task < ApplicationRecord
   validates :start_date, presence: true
   validates :collaborator_id, presence: true
   validates :task_status, presence: true
+
+  class << self
+    def search(query)
+      unscoped
+        .joins("INNER JOIN collaborators ON collaborators.id = tasks.collaborator_id")
+        .where("collaborators.name ILIKE ?", "%#{query}%")
+        .includes(collaborator: :sector)
+    end
+  end
 end

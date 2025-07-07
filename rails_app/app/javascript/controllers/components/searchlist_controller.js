@@ -45,12 +45,6 @@ export default class extends Controller {
           if (this.nameValue == "name") {
             element.textContent = name.name;
             element.dataset.name = name.name;
-          } else if (this.nameValue == "property_ccir") {
-            element.textContent = name.property_ccir;
-            element.dataset.name = name.property_ccir;
-          } else if (this.nameValue == "property_register") {
-            element.textContent = name.property_register;
-            element.dataset.name = name.property_register;
           }
 
           this.resultsTarget.appendChild(element);

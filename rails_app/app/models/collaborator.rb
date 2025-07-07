@@ -8,8 +8,7 @@ class Collaborator < ApplicationRecord
 
   class << self
     def search(query)
-      puts "Searching for collaborator with name: #{query}"
-      where("LOWER(name) LIKE ?", "%#{query.downcase}%")
+      unscoped.where("LOWER(name) LIKE ?", "%#{query.downcase}%")
     end
   end
 end
