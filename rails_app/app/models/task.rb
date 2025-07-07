@@ -10,11 +10,20 @@ class Task < ApplicationRecord
   validates :task_status, presence: true
 
   class << self
-    def search(query)
-      unscoped
+    def search(name_query, status_query)
+      scope = unscoped
         .joins("INNER JOIN collaborators ON collaborators.id = tasks.collaborator_id")
-        .where("collaborators.name ILIKE ?", "%#{query}%")
         .includes(collaborator: :sector)
+
+      if name_query.present?
+        scope = scope.where("collaborators.name ILIKE ?", "%#{name_query}%")
+      end
+
+      if status_query.present?
+        scope = scope.where(task_status: status_query)
+      end
+
+      scope
     end
   end
 end

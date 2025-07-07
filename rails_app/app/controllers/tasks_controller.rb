@@ -12,8 +12,9 @@ class TasksController < ApplicationController
   end
 
   def search
-    query = params[:search_name]
-    @tasks = Task.search(query)
+    name_query = params[:search_name]
+    status_query = params[:search_status]
+    @tasks = Task.search(name_query, status_query)
     @pagy, @tasks = pagy(@tasks, items: 5)
     render(:index)
   end

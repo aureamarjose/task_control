@@ -9,7 +9,7 @@ module Components
 
       def view_template
         form_with(url: search_tasks_path, method: :get) do |f|
-          div(class: "mt-8 border relative shadow-md sm:rounded-lg") do
+          div(class: "my-8 border relative shadow-md sm:rounded-lg") do
             p(class: "border-b ps-5 py-2 text-lg font-medium text-gray-900 dark:text-white") { " Task filter" }
             div(class: "p-5 grid gap-3 lg:grid-cols-4") do
               render(Input::SearchListInput.new(
@@ -23,7 +23,13 @@ module Components
                 action_2: "",
                 target_2: "",
               ))
-
+              render(Input::Select.new(
+                label: "Task status",
+                form: f,
+                data: :search_status,
+                select_options: ::Task.task_statuses.keys.map { |status| [t("activerecord.attributes.task.enums.task_status.#{status}"), status] },
+                include_blank: true,
+              ))
               div(class: "mt-7 h-10 grid grid-cols-2 gap-4 w-full ") do
                 render(Button::Submit.new(
                   background: "bg-blue-700",
