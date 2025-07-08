@@ -21,7 +21,7 @@ cd task_control
 bundle install
 # Criar e polular o banco de dados
 rails setup:populate
-```bash
+```
 
 ✅ Funcionalidades implementadas
 Descreva aqui as principais funcionalidades da sua aplicação. Por exemplo:
