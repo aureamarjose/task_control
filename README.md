@@ -16,21 +16,22 @@ git clone https://github.com/aureamarjose/task_control.git
 cd task_control
 
 # abra o VSCode
+code .
 # Inicie o projeto dentro do dev container
 # Digite o comando
 bundle install
-# Criar e polular o banco de dados
+rails db:create db:migrate 
+# Polular o banco de dados
 rails setup:populate
 ```
 
-✅ Funcionalidades implementadas
+## ✅ Funcionalidades implementadas
 Descreva aqui as principais funcionalidades da sua aplicação. Por exemplo:
+- Controle de tarefas
+- CRUD sector/collaborator/task
+- Envio de e-mails na criação de uma tarefa
 
-Controle de tarefas
-CRUD sector/collaborator/task
-Background job para envio de e-mails
-
-🧠 Conceitos aplicados
+## 🧠 Conceitos aplicados
 Abaixo estão os conceitos aprendidos em aula e aplicados neste projeto, junto com a justificativa de sua utilização:
 
 1. Service Objects
