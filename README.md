@@ -4,10 +4,12 @@ Nome do Projeto
 Este é um projeto desenvolvido como parte do curso de Ruby on Rails. O objetivo é aplicar os conceitos aprendidos em aula para criar uma aplicação web funcional, bem estruturada e com boas práticas de desenvolvimento.
 
 📦 Tecnologias Utilizadas
-Ruby 3.4.4
-Ruby on Rails 8.0.2
-PostgreSQL
+- Ruby 3.4.4
+- Ruby on Rails 8.0.2
+- PostgreSQL
+  
 🚀 Como rodar o projeto localmente
+
 # Clone o repositório
 git clone https://github.com/aureamarjose/task_control.git
 cd task_control
