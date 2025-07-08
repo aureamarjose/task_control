@@ -40,13 +40,13 @@ class TasksController < ApplicationController
 
   # POST /tasks or /tasks.json
   def create
-    @task = Task.new(task_params)
-
+    result = Tasks::Organizers::CreateAndNotify.call(params: task_params)
     respond_to do |format|
-      if @task.save
-        format.html { redirect_to(@task, notice: "Task was successfully created.") }
-        format.json { render(:show, status: :created, location: @task) }
+      if result.success?
+        format.html { redirect_to(result.task, notice: "Task was successfully created.") }
+        format.json { render(:show, status: :created, location: result.task) }
       else
+        @task = result.task
         format.html { render(:new, status: :unprocessable_entity) }
         format.json { render(json: @task.errors, status: :unprocessable_entity) }
       end
