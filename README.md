@@ -12,7 +12,7 @@ Este é um projeto desenvolvido como parte do curso de Ruby on Rails. O objetivo
 
 ```bash
 # Clone o repositório
-git clone https://github.com/aureamarjose/task_control.git
+git clone git@github.com:aureamarjose/task_control.git
 cd task_control
 
 # abra o VSCode
@@ -34,7 +34,7 @@ Descreva aqui as principais funcionalidades da sua aplicação. Por exemplo:
 ## 🧠 Conceitos aplicados
 Abaixo estão os conceitos aprendidos em aula e aplicados neste projeto, junto com a justificativa de sua utilização:
 
-1. Service Objects
+### 1. Service Objects
 Utilizados para encapsular regras de negócio complexas fora dos models e controllers, mantendo o código mais limpo e testável. Podemos observar no projeto a classe TAL que faz isso e isso onde podemos comprovar o benefício da utilização desse conceito.
 
 2. ActiveJob + Sidekiq
