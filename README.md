@@ -8,7 +8,7 @@ Este é um projeto desenvolvido como parte do curso de Ruby on Rails. O objetivo
 - Ruby on Rails 8.0.2
 - PostgreSQL
   
-🚀 Como rodar o projeto localmente
+## 🚀 Como rodar o projeto localmente
 
 # Clone o repositório
 git clone https://github.com/aureamarjose/task_control.git
