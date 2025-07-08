@@ -39,10 +39,13 @@ Abaixo estão os conceitos aprendidos em aula e aplicados neste projeto, junto c
 Utilizado para manter boas práticas no desenvolvimento do código mantendo um código padronizado.
 
 ## 2. Default Scope
-É utilizado para filtrar registros ativos e inativos, evitando a perda de dados quando o usuário exclui algo que pode ser recuperado posteriormente. Além disso, evita a repetição de código e garante que regras, como exibir apenas registros ativos, sejam aplicadas de forma automática e consistente.
+É utilizado para filtrar registros ativos e inativos, evitando a perda de dados quando o usuário exclui algo que pode ser recuperado posteriormente. Além disso, evita a repetição de código e garante que regras, como exibir apenas registros ativos, sejam aplicadas de forma automática e consistente. Podendo ser observar no model Sector e Collaborator.
 
-## 3. Design Patterns como Form Objects ou Presenters
-Aplicados para organizar melhor o código em casos onde os formulários possuem lógica de validação ou exibição mais complexa. Escolhi usar o PATTERN para possibilitar desacoplar tal classe e assim ter o benefício disso disso e disso.
+## 3. Decorators
+Os decorators foram utilizados para separar a lógica de apresentação da lógica de negócio presente no model.
+Como o model utilizava default_scope para filtrar apenas colaboradores ativos, colaboradores desativados não apareciam corretamente na renderização das tarefas.
+Para resolver isso, foi implementada uma lógica no decorator que permite exibir o nome do colaborador mesmo quando ele está desativado.
+Essa solução pode ser observada no arquivo decorators/task_decorator.rb, e sua aplicação está na view views/task/_task.html.erb.
 
 Em resumo, inclua pelo menos 5 conceitos que utilizou, a justificativa de cada um e como isso te ajudou no projeto.
 
