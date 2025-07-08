@@ -1,6 +1,6 @@
 Aluno: Aureamar Jose Garcia Rocha Email: aureamar.jose@gmail.com
 
-Nome do Projeto
+# Task Control
 Este é um projeto desenvolvido como parte do curso de Ruby on Rails. O objetivo é aplicar os conceitos aprendidos em aula para criar uma aplicação web funcional, bem estruturada e com boas práticas de desenvolvimento.
 
 📦 Tecnologias Utilizadas
@@ -10,6 +10,7 @@ Este é um projeto desenvolvido como parte do curso de Ruby on Rails. O objetivo
   
 ## 🚀 Como rodar o projeto localmente
 
+```bash
 # Clone o repositório
 git clone https://github.com/aureamarjose/task_control.git
 cd task_control
