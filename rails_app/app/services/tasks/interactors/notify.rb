@@ -7,14 +7,10 @@ module Tasks
       def call
         task = context.task
         if task.persisted?
-          puts "--------------Task '#{task.description}' was successfully created with ID: #{task.id}."
+          TaskMailer.notify_collaborator(task).deliver_later
         else
-          puts "-----------------Failed to create task. Errors: #{task.errors.full_messages.join(", ")}"
           context.fail!(error: "---------------Task creation failed")
         end
-      rescue StandardError => e
-        puts "An error occurred while notifying: #{e.message}"
-        context.fail!(error: "Notification failed")
       end
     end
   end
