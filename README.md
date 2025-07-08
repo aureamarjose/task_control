@@ -3,7 +3,7 @@ Aluno: Aureamar Jose Garcia Rocha Email: aureamar.jose@gmail.com
 # Task Control
 Este é um projeto desenvolvido como parte do curso de Ruby on Rails. O objetivo é aplicar os conceitos aprendidos em aula para criar uma aplicação web funcional, bem estruturada e com boas práticas de desenvolvimento.
 
-📦 Tecnologias Utilizadas
+## 📦 Tecnologias Utilizadas
 - Ruby 3.4.4
 - Ruby on Rails 8.0.2
 - PostgreSQL
