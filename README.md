@@ -20,7 +20,7 @@ code .
 # Inicie o projeto dentro do dev container
 # Digite o comando
 bundle install
-rails db:create db:migrate 
+rails db:create
 # Polular o banco de dados
 rails setup:populate
 # Configurar settings.json do VSCode para utiliar o Ruby lsp
